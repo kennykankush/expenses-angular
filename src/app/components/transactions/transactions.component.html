@@ -1,0 +1,40 @@
+<h2> Expense Tracker </h2>
+
+<button type="button" (click)="onEntry()">Add Entry</button>
+
+@if (entryClicked) {
+    
+<form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" name="amount" formControlName="amount">
+    <p>Value: {{ transactionForm.get('amount')?.value }}</p> 
+
+    <label for="type">Type:</label>
+    <select id="type" name="type" formControlName="type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+    </select>
+    <p>Value: {{ transactionForm.get('type')?.value }}</p> 
+
+    <label for="category">Category:</label>
+    <select id="category" name="category" formControlName="category">
+        <option value="food">Food</option>
+        <option value="drink">Drink</option>
+        <option value="rent">Rent</option>
+        <option value="salary">Salary</option>
+        <option value="entertainment">Entertainment</option>
+        <option value="transportation">Transportation</option>
+        <option value="other">Other</option>
+    </select>
+    <p>Value: {{ transactionForm.get('category')?.value }}</p> 
+
+    <label for="notes">Notes:</label>
+    <input type="text" id="notes" name="notes" formControlName="notes">
+    <p>Value: {{ transactionForm.get('notes')?.value }}</p> 
+
+    <button type="submit" [disabled]="!transactionForm.valid">Submit</button>
+    <button type="button" (click)="onReset()">Reset</button>
+</form>
+
+}

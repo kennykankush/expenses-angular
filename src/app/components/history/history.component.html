@@ -1,0 +1,20 @@
+<p>Total: {{ sum }} </p>
+<table>
+    <thead>
+      <tr>
+        <th>Amount</th>
+        <th>Type</th>
+        <th>Category</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions">
+        <td>{{ transaction.amount }}</td>
+        <td>{{ transaction.type }}</td>
+        <td>{{ transaction.category }}</td>
+        <td>{{ transaction.notes }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
