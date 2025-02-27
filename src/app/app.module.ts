@@ -6,6 +6,8 @@ import { TransactionsComponent } from './components/transactions/transactions.co
 import { ReactiveFormsModule } from '@angular/forms';
 import { HistoryComponent } from './components/history/history.component';
 import { OverviewComponent } from './components/overview/overview.component';
+import { PriceTrackerComponent } from './components/price-tracker/price-tracker.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,12 +15,13 @@ import { OverviewComponent } from './components/overview/overview.component';
     TransactionsComponent,
     HistoryComponent,
     OverviewComponent,
+    PriceTrackerComponent,
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
