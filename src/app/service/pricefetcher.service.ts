@@ -15,9 +15,9 @@ export class PricefetcherService {
 
   constructor(private httpClient: HttpClient) { }
 
-  fetchPrice(): Observable<any> {
+  fetchPrice(): Observable<string> {
     const headers = new HttpHeaders().set('X-Auth-Token', this.apiKey);
-    return this.httpClient.get(this.apiUrl,  { headers });
+    return this.httpClient.get<string>(this.apiUrl,  { headers });
 
   }
 
